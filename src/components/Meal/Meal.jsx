@@ -14,7 +14,7 @@ const Meal = ({ meal }) => {
                 <p className='text-start'>{strMeal}</p>
                 <p className='text-start'>{strInstructions}</p>
                 <div className="card-actions justify-end">
-                    <Link id={`/mealDetail/${idMeal}`}><button className="btn btn-primary">Meal Detail</button></Link>
+                    <button className="btn btn-primary"><Link to={`/mealDetail/${idMeal}`}>Meal Detail</Link></button>
                     
                 </div>
             </div>
