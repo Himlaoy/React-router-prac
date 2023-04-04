@@ -13,6 +13,7 @@ import ErrorPage from './components/Error/ErrorPage';
 import Contact from './components/Routes/Contact';
 import About from './components/About/About';
 import Meals from './components/Meals/Meals';
+import MealDetail from './components/MealDetail/MealDetail';
 
 const router= createBrowserRouter([
   {
@@ -27,8 +28,13 @@ const router= createBrowserRouter([
       {
         path: 'meals',
         element:<Meals/>,
-        loader:()=>fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
+        loader:()=>fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a'),
       },
+      {
+        path:'mealDetail/:DetailMeal',
+        element:<MealDetail></MealDetail>,
+        loader:({params})=>fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.DetailMeal}`)
+      }
     ]
   },
  
